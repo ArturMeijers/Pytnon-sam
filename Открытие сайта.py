@@ -1,18 +1,22 @@
 import os
 
-sayt = input()
+while True:
+    sayt = input('Введите адрес сайта\n')
 
-if 'https://' in sayt:
-    os.system('start' + sayt)
-    print('if')
+    if sayt == 'Завершить':
+        break
 
-elif 'www.' in sayt:
-    sayt = 'https://' + sayt
-    os.system('start' + sayt)
-    print('elif')
+    if 'https://' in sayt:
+        os.system('start ' + sayt)
+        print('if')
 
-else:
-    sayt = 'https://www.' + sayt
-    os.system('start' + sayt)
-    print('else')
+    elif 'www.' in sayt:
+        sayt = 'https://' + sayt
+        os.system('start ' + sayt)
+        print('elif')
+
+    else:
+        sayt = 'https://www.' + sayt
+        os.system('start ' + sayt)
+        print('else')
 
